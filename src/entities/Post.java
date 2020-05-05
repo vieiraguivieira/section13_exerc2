@@ -8,13 +8,17 @@ import java.util.List;
 public class Post {
 	
 	private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-
+// private static é para ter só uma cópia para a aplicação inteira
+	
 	private Date date;
 	private String title;
 	private String content;
 	private Integer likes;
 	
 	List<Comment> comments = new ArrayList<>();
+	
+	public Post(){
+		}
 	
 	public Post(Date date, String title, String content, Integer likes) {
 		this.date = date;
@@ -55,7 +59,17 @@ public class Post {
 	}
 
 	public String toString() {
-		return title + "\n" + likes + " likes " + "- " + sdf.format(date) + "\n" + content + "\n" + "Comments: ";
+		StringBuilder sb = new StringBuilder();
+		sb.append(title + "\n");
+		sb.append("Likes - ");
+		sb.append(likes);
+		sb.append(sdf.format(date) + "\n");
+		sb.append(content + "\n");
+		sb.append("Comments: " + "\n");
+		for (Comment c : comments) {
+			sb.append(c.getText() + "\n");
+		}
+		return sb.toString();
 	}
 	
 	

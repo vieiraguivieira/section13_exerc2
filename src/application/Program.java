@@ -16,7 +16,7 @@ public class Program {
 		
 		Date date1 = sdf.parse("25/06/2018 13:05:44");
 		String title1 = "Traveling to New Zeland";
-		String content1 = "I'm going to visit this wonderful country";
+		String content1 = "I'm going to visit this wonderful country!";
 		int likes1 = 12;
 		
 		Comment c1 = new Comment ("Have a nice trip");
@@ -40,9 +40,9 @@ public class Program {
 		post2.addComment(c3);
 		post2.addComment(c4);
 
-		System.out.println(post1 + "\n" + c1.getText() + "\n" + c2.getText());
+		System.out.println(post1);
 		System.out.println();
-		System.out.println(post2 + "\n" + c3.getText() + "\n" + c4.getText());
+		System.out.println(post2);
 
 	}
 
